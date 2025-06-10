@@ -1,0 +1,13 @@
+#!/bin/bash
+
+sudo pacman -S ttf-droid ttf-cascadia-code-nerd
+
+sudo pacman -S bluez bluez-utils cronie brightnessctl acpi pacman-contrib python-pywal uwsm xorg-xrdb
+
+sudo pacman -S xdg-desktop-portal-hyprland qt5-wayland qt6-wayland xdg-desktop-portal-gtk xdg-user-dirs
+
+sudo pacman -S hyprland hyprpaper hypridle hyprlock rofi-wayland waybar dunst polkit-gnome gnome-keyring
+
+sudo pacman -S ghostty firefox telegram-desktop discord flatpak wl-clipboard sxiv mpv
+
+paru -S hyprshot-git wlogout-git spotify-adblock-git google-chrome brave-bin

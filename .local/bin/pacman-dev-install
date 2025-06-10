@@ -1,0 +1,7 @@
+#!/bin/bash
+
+sudo pacman -S gcc python python-pip nodejs npm docker
+
+sudo pacman -S nvim lazygit fzf ripgrep fd tmux
+
+paru -S visual-studio-code-bin postman-bin

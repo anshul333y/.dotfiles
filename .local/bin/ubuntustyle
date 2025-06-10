@@ -2,7 +2,7 @@
 
 # anshul333y's ubuntustyle script
 
-WALLPAPER_DIR="$HOME/Pictures/wall"
+WALLPAPER_DIR="$HOME/pics/wall"
 
 # Use argument as wallpaper if provided, otherwise pick a random one
 if [ -n "$1" ]; then
