@@ -9,6 +9,7 @@
     "modules-left": [
         "clock",
         "hyprland/workspaces",
+        "custom/wlogout",
         "custom/pacman-updates"
     ],
     "modules-center": ["hyprland/window"],
@@ -20,8 +21,7 @@
         "battery",
         "backlight",
         "pulseaudio",
-        "pulseaudio#microphone",
-        "custom/wlogout"
+        "pulseaudio#microphone"
     ],
 
     "clock": {
@@ -47,6 +47,14 @@
         "disable-scroll": true,
         "all-outputs": true,
         "on-click": "activate"
+    },
+
+    "custom/wlogout": {
+        "format": "⏻",
+        "tooltip": true,
+        "tooltip-format": "Logout",
+        "on-click": "wlogout",
+        "interval": 9999999
     },
 
     "custom/pacman-updates": {
@@ -149,12 +157,5 @@
         "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 1%+",
         "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 1%-",
         "scroll-step": 5
-    },
-
-    "custom/wlogout": {
-        "format": "⏻",
-        "tooltip": "Logout",
-        "on-click": "wlogout",
-        "interval": 9999999
     }
 }

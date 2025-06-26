@@ -24,7 +24,7 @@ window#waybar {
 #battery,
 #backlight,
 #pulseaudio {
-    background: @color0;
+    background: rgba(0, 0, 0, 1);
     padding: 0px 10px;
     margin: 3px 0px;
     margin-top: 5px;
@@ -39,7 +39,7 @@ window#waybar {
 }
 
 #workspaces {
-    background: @color0;
+    background: rgba(0, 0, 0, 1);
     border-radius: 10px;
     margin-left: 10px;
     padding-right: 0px;
@@ -74,12 +74,23 @@ window#waybar {
     border-radius: 10px;
 }
 
+#custom-wlogout {
+    background: rgba(0, 0, 0, 1);
+    padding: 0px 10px 0px 7px;
+    margin: 3px 0px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: @color4;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
 #custom-pacman-updates {
     padding: 0px 10px 0px 9px;
     margin: 3px 0px;
     margin-top: 5px;
     margin-bottom: 0px;
-    background: @color0;
+    background: rgba(0, 0, 0, 1);
     color: @color4;
     border-radius: 10px;
     margin-left: 10px;
@@ -131,16 +142,5 @@ window#waybar {
 #pulseaudio.microphone {
     color: @color4;
     border-radius: 0px 10px 10px 0px;
-    margin-right: 10px;
-}
-
-#custom-wlogout {
-    background: @color0;
-    padding: 0px 10px 0px 7px;
-    margin: 3px 0px;
-    margin-top: 5px;
-    margin-bottom: 0px;
-    color: @color4;
-    border-radius: 10px;
     margin-right: 10px;
 }
