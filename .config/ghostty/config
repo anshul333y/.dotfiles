@@ -1,8 +1,10 @@
 theme = "/home/anshul333y/.cache/wal/colors-ghostty"
-font-family = CaskaydiaCove Nerd Font
-font-size = 15
 
+font-family = Maple Mono NF CN
+
+font-size = 15
 background-opacity = 0.8
+
 gtk-titlebar = false
-window-width=138
-window-height=38
+window-width=136
+window-height=36

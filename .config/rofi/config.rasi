@@ -1,7 +1,7 @@
 @import "~/.cache/wal/colors-rofi-dark.rasi"
 
 configuration {
-    font:                  "CaskaydiaCove Nerd Font Bold 16";
+    font:                  "Maple Mono NF CN Bold 18";
     show-icons:            true;
     icon-theme:            "Arc-X-D";
     display-drun:          "Applications";
