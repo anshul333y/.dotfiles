@@ -56,21 +56,21 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#181825"
+    background = "#000000"
     foreground = "#CDD6F4"
     highlight = "#CDD6F4"
     frame_color = "#181825"
     timeout = 5
 
 [urgency_normal]
-    background = "#181825"
+    background = "#000000"
     foreground = "#CDD6F4"
     highlight = "#CDD6F4"
     frame_color = "#181825"
     timeout = 5
 
 [urgency_critical]
-    background = "#181825"
+    background = "#000000"
     foreground = "#CDD6F4"
     frame_color = "#f38ba8"
     timeout = 1000
@@ -82,5 +82,3 @@
 [backlight]
     appname = "Backlight"
     highlight = "#eba0ac"
-
-# vim: ft=cfg
