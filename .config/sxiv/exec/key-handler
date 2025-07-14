@@ -2,7 +2,7 @@
 
 while read file; do
   case $1 in
-  "d") mv $file ~/.local/share/Trash ;;
+  "d") rm $file ;;
   "t") ~/.local/bin/hyprstyle $file ;;
   esac
 done
