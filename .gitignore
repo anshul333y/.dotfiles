@@ -1,7 +1,7 @@
 # ignoring auto generated files
 .config/hypr/hyprpaper.conf
 .config/hypr/hyprlock.conf
-.config/hypr/hyprcolors.conf
+.config/hypr/custom/hyprcolors.conf
 
 # ignoring .env files
 .local/.env

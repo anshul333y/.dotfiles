@@ -41,8 +41,8 @@ nohup hyprpaper -c "$CONFIG" >/dev/null 2>&1 &
 pkill waybar
 (sleep 0.5 && waybar) >/dev/null 2>&1 &
 
-# Hyprland
-HYPR_COLORS="$HOME/.config/hypr/hyprcolors.conf"
+# hyprcolors
+HYPR_COLORS="$HOME/.config/hypr/custom/hyprcolors.conf"
 
 source "$HOME/.cache/wal/colors.sh"
 
