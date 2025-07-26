@@ -41,8 +41,8 @@ nohup hyprpaper -c "$CONFIG" >/dev/null 2>&1 &
 pkill waybar
 (sleep 0.5 && waybar) >/dev/null 2>&1 &
 
-# Hyprland
-HYPR_COLORS="$HOME/.config/hypr/hyprcolors.conf"
+# hyprcolors
+HYPR_COLORS="$HOME/.config/hypr/hyprcolor.conf"
 
 source "$HOME/.cache/wal/colors.sh"
 
@@ -57,7 +57,7 @@ ACTIVE_BORDER="rgba(${active_hex})"
 INACTIVE_BORDER="rgba(${inactive_hex})"
 
 cat >"$HYPR_COLORS" <<EOF
-# AUTO-GENERATED hyprcolors.conf from hyprstyle
+# AUTO-GENERATED hyprcolor.conf from hyprstyle
 
 general {
   col.active_border = $ACTIVE_BORDER $ACTIVE_BORDER $ANGLE

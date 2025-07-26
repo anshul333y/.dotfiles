@@ -1,10 +1,7 @@
 # ignoring auto generated files
 .config/hypr/hyprpaper.conf
 .config/hypr/hyprlock.conf
-.config/hypr/hyprcolors.conf
-
-# ignoring .env files
-.local/.env
+.config/hypr/hyprcolor.conf
 
 # ignoring tmux plugins
 .config/tmux/plugins
