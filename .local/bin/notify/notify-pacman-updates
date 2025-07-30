@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Waybar update check script using checkupdates and paru
 # Requires: pacman-contrib, paru
