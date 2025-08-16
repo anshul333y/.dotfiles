@@ -1,0 +1,8 @@
+#!/bin/bash
+
+while read file; do
+  case $1 in
+  "d") rm $file ;;
+  "t") ~/.local/bin/hyprstyle $file ;;
+  esac
+done

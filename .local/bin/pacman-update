@@ -1,0 +1,11 @@
+#!/bin/bash
+
+sudo pacman -Syu
+
+printf "\n%${COLUMNS}s\n\n" | tr ' ' '-'
+
+paru -Syu
+
+printf "\n%${COLUMNS}s\n\n" | tr ' ' '-'
+
+flatpak update

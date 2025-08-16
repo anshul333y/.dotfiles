@@ -1,0 +1,11 @@
+# ignoring auto generated files
+.config/hypr/hyprpaper.conf
+.config/hypr/hyprlock.conf
+
+# ignoring tmux plugins
+.config/tmux/plugins
+
+# ignoring zsh system files
+.config/zsh/.zcompdump*
+
+.face
