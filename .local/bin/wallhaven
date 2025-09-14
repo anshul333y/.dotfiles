@@ -4,27 +4,28 @@
 
 SAVE_DIR="$HOME/pics/save"
 WALLPAPER_DIR="$HOME/pics/wall"
-RESOLUTION="1920x1080"
-CATEGORIES="111" # General, Anime, and People
-PURITY="100"     # SFW only
-ORDER="desc"     # Default order
+CATEGORIES="111"
+PURITY="100"
+ORDER="desc"
+TOPRANGE="1y"
 MAX_PAGES=3
 
 # Prompt for sorting
 echo "Choose sorting option:"
-echo "1) random  2) relevance  3) date_added  4) views  5) favorites  6) toplist"
+echo "1) date_added  2) relevance  3) random  4) views  5) favorites  6) toplist  7)hot"
 
-read -p "Enter choice [1-6]: " sort_choice
+read -p "Enter choice [1-7]: " sort_choice
 case "$sort_choice" in
-1) SORTING="random" ;;
+1) SORTING="date_added" ;;
 2) SORTING="relevance" ;;
-3) SORTING="date_added" ;;
+3) SORTING="random" ;;
 4) SORTING="views" ;;
 5) SORTING="favorites" ;;
 6) SORTING="toplist" ;;
+7) SORTING="hot" ;;
 *)
-  echo "Invalid choice. Defaulting to 'random'."
-  SORTING="random"
+  echo "Invalid choice. Defaulting to 'date_added'."
+  SORTING="date_added"
   ;;
 esac
 
@@ -41,9 +42,9 @@ while [ "$PAGE" -le "$MAX_PAGES" ]; do
     --data-urlencode "apikey=$API_KEY" \
     --data-urlencode "categories=$CATEGORIES" \
     --data-urlencode "purity=$PURITY" \
-    --data-urlencode "resolutions=$RESOLUTION" \
     --data-urlencode "sorting=$SORTING" \
     --data-urlencode "order=$ORDER" \
+    --data-urlencode "topRange=$TOPRANGE" \
     --data-urlencode "page=$PAGE")
 
   NEW_URLS=($(echo "$RESPONSE" | jq -r '.data[].path'))
