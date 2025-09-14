@@ -7,7 +7,7 @@ configuration {
     display-drun:          "Applications";
     drun-display-format:   "{name}";
     scroll-method:         0;
-    disable-history:       false;
+    disable-history:       true;
     sidebar-mode:          false;
     matching:              "fuzzy";
     case-sensitive:        false;
@@ -15,7 +15,7 @@ configuration {
 }
 
 window {
-    width:                 50%;
+    width:                 60%;
     location:              center;
     border-radius:         16px;
     padding:               20px;
@@ -24,7 +24,7 @@ window {
 
 
 listview {
-    columns:               2;
+    columns:               3;
     lines:                 6;
     spacing:               6px;
     fixed-height:          false;
