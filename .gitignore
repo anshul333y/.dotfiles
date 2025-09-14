@@ -7,3 +7,6 @@
 
 # ignoring zsh system files
 .config/zsh/.zcompdump*
+
+# ignoring ncmpcpp error log
+.config/ncmpcpp/error.log
