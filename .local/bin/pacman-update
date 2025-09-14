@@ -1,11 +1,11 @@
 #!/bin/bash
 
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm
 
 printf "\n%${COLUMNS}s\n\n" | tr ' ' '-'
 
-paru -Syu
+paru -Syu --noconfirm
 
 printf "\n%${COLUMNS}s\n\n" | tr ' ' '-'
 
-flatpak update
+flatpak update --noninteractive
