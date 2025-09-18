@@ -1,5 +1,4 @@
 # ignoring auto generated files
-.config/hypr/hyprpaper.conf
 .config/hypr/hyprlock.conf
 
 # ignoring tmux plugins

@@ -2,17 +2,19 @@
 
 # anshul333y's hyprstyle script
 
-WALLPAPER="${1:-$(find "$HOME/pics/wall" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) | shuf -n 1)}"
+WALLDIR="$HOME/pics/wall"
+SYMLINK="$HOME/pics/wall.jpg"
+if [[ -n "$1" ]]; then
+  WALLPAPER="$1"
+  ln -sf "$WALLPAPER" "$SYMLINK"
+else
+  mapfile -t files < <(find "$WALLDIR" -type f -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" | sort)
+  [[ -L "$SYMLINK" ]] || ln -sf "${files[0]}" "$SYMLINK"
+  for i in "${!files[@]}"; do [[ "${files[$i]}" == "$(readlink "$SYMLINK")" ]] && idx=$i; done
+  WALLPAPER="${files[$(((idx + 1) % ${#files[@]}))]}"
+  ln -sf "$WALLPAPER" "$SYMLINK"
+fi
 wal -i "$WALLPAPER" 2>/dev/null
-
-# Hyprpaper
-CONFIG="$HOME/.config/hypr/hyprpaper.conf"
-cat >"$CONFIG" <<EOF
-# AUTO-GENERATED hyprpaper.conf from hyprstyle
-
-preload = $WALLPAPER
-wallpaper = eDP-1,$WALLPAPER
-EOF
 
 # Restart
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
@@ -24,6 +26,7 @@ waybar &>/dev/null &
 hyprctl reload
 
 # Hyprlock
+source "$HOME/.cache/wal/colors.sh"
 HYPRLOCK_CONF="$HOME/.config/hypr/hyprlock.conf"
 base="$color0"
 surface0="$color8"
@@ -35,6 +38,7 @@ red="$color1"
 yellow="$color3"
 accent="$mauve"
 accentAlpha="$mauveAlpha"
+
 cat >"$HYPRLOCK_CONF" <<EOF
 # AUTO-GENERATED hyprlock.conf from hyprstyle
 
@@ -83,7 +87,7 @@ image {
     monitor =
     path = ~/.face
     size = 300
-    border_color = $accent
+    border_color = rgba(0,0,0,0)
     position = 0, 150
     halign = center
     valign = center
@@ -94,12 +98,12 @@ input-field {
     monitor =
     size = 350, 60
     outline_thickness = 4
-    dots_size = 0.2
-    dots_spacing = 0.2
+    dots_size = 0.3
+    dots_spacing = 0.3
     dots_center = true
     outer_color = $accent
-    inner_color = $surface0
-    font_color = $text
+    inner_color = rgba(0, 0, 0, 0.6)
+    font_color = $accent
     fade_on_empty = false
     placeholder_text = <span foreground="##$textAlpha"><i>󰌾 Logged in as </i><span foreground="##$accentAlpha">$USER</span></span>
     hide_input = false
