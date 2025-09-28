@@ -2,113 +2,29 @@
 
 # anshul333y's hyprstyle script
 
-WALLPAPER="${1:-$(find "$HOME/pics/wall" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) | shuf -n 1)}"
-wal -i "$WALLPAPER" 2>/dev/null
+WALLDIR="$HOME/pics/wall"
+SYMLINK="$HOME/pics/wall.jpg"
 
-# Hyprpaper
-CONFIG="$HOME/.config/hypr/hyprpaper.conf"
-cat >"$CONFIG" <<EOF
-# AUTO-GENERATED hyprpaper.conf from hyprstyle
+if [[ -n "$1" ]]; then
+  WALLPAPER="$1"
+  ln -sf "$WALLPAPER" "$SYMLINK"
+else
+  mapfile -t files < <(find "$WALLDIR" -type f -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" | sort)
+  [[ -L "$SYMLINK" ]] || ln -sf "${files[0]}" "$SYMLINK"
+  for i in "${!files[@]}"; do [[ "${files[$i]}" == "$(readlink "$SYMLINK")" ]] && idx=$i; done
+  WALLPAPER="${files[$(((idx + 1) % ${#files[@]}))]}"
+  ln -sf "$WALLPAPER" "$SYMLINK"
+fi
 
-preload = $WALLPAPER
-wallpaper = eDP-1,$WALLPAPER
-EOF
+source ~/.python-venv/bin/activate 2>/dev/null
+TERM=dumb wal -i "$WALLPAPER" 2>/dev/null
 
-# Restart
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 gsettings set org.gnome.desktop.background picture-uri-dark "file://$WALLPAPER"
-pkill waybar
-pkill hyprpaper
-hyprpaper &>/dev/null &
-waybar &>/dev/null &
-hyprctl reload
-
-# Hyprlock
-HYPRLOCK_CONF="$HOME/.config/hypr/hyprlock.conf"
-base="$color0"
-surface0="$color8"
-text="$color15"
-textAlpha="${text:1}120"
-mauve="$color5"
-mauveAlpha="${mauve:1}120"
-red="$color1"
-yellow="$color3"
-accent="$mauve"
-accentAlpha="$mauveAlpha"
-cat >"$HYPRLOCK_CONF" <<EOF
-# AUTO-GENERATED hyprlock.conf from hyprstyle
-
-# GENERAL
-general {
-    disable_loading_bar = true
-    hide_cursor = true
-}
-
-# BACKGROUND
-background {
-    monitor =
-    path = $WALLPAPER
-    blur_passes = 2
-    blur_size = 3
-    noise = true
-    color = rgba(${base:1:2}, ${base:3:2}, ${base:5:2}, 0.8)
-}
-
-# TIME (updates every minute)
-label {
-    monitor =
-    text = cmd[update:60000] date +"%I:%M %p"
-    color = $text
-    font_size = 90
-    font_family = Maple Mono NF CN
-    position = -30, 0
-    halign = right
-    valign = top
-}
-
-# DATE (updates every 12 hours)
-label {
-    monitor =
-    text = cmd[update:43200000] date +"%A, %d %B %Y"
-    color = $text
-    font_size = 35
-    font_family = Maple Mono NF CN
-    position = -30, -150
-    halign = right
-    valign = top
-}
-
-# USER AVATAR
-image {
-    monitor =
-    path = ~/.face
-    size = 300
-    border_color = $accent
-    position = 0, 150
-    halign = center
-    valign = center
-}
-
-# INPUT FIELD
-input-field {
-    monitor =
-    size = 350, 60
-    outline_thickness = 4
-    dots_size = 0.2
-    dots_spacing = 0.2
-    dots_center = true
-    outer_color = $accent
-    inner_color = $surface0
-    font_color = $text
-    fade_on_empty = false
-    placeholder_text = <span foreground="##$textAlpha"><i>󰌾 Logged in as </i><span foreground="##$accentAlpha">$USER</span></span>
-    hide_input = false
-    check_color = $accent
-    fail_color = $red
-    fail_text = <i>\$FAIL <b>(\$ATTEMPTS)</b></i>
-    capslock_color = $yellow
-    position = 0, -100
-    halign = center
-    valign = center
-}
-EOF
+if pgrep -x "Hyprland" >/dev/null; then
+  pkill waybar
+  pkill hyprpaper
+  hyprpaper &>/dev/null &
+  waybar &>/dev/null &
+  hyprctl reload
+fi
