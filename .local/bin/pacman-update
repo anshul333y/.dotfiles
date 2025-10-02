@@ -4,6 +4,10 @@ sudo pacman -Syu --noconfirm
 
 printf "\n%${COLUMNS}s\n\n" | tr ' ' '-'
 
+sudo pacman -Rns $(pacman -Qdtq)
+
+printf "\n%${COLUMNS}s\n\n" | tr ' ' '-'
+
 paru -Syu --noconfirm
 
 printf "\n%${COLUMNS}s\n\n" | tr ' ' '-'
