@@ -1,0 +1,96 @@
+[org/gnome/control-center]
+window-state=(1680, 940, false)
+
+[org/gnome/desktop/input-sources]
+xkb-options=['caps:escape']
+
+[org/gnome/desktop/interface]
+clock-format='12h'
+clock-show-weekday=true
+show-battery-percentage=true
+
+[org/gnome/desktop/peripherals/mouse]
+speed=1.0
+
+[org/gnome/desktop/peripherals/touchpad]
+speed=0.7
+
+[org/gnome/desktop/wm/keybindings]
+close=['<Super>q']
+move-to-workspace-1=['<Shift><Super>1']
+move-to-workspace-2=['<Shift><Super>2']
+move-to-workspace-3=['<Shift><Super>3']
+move-to-workspace-4=['<Shift><Super>4']
+switch-input-source=@as []
+switch-input-source-backward=@as []
+switch-to-workspace-1=['<Super>1']
+switch-to-workspace-2=['<Super>2']
+switch-to-workspace-3=['<Super>3']
+switch-to-workspace-4=['<Super>4']
+
+[org/gnome/mutter]
+center-new-windows=true
+
+[org/gnome/nautilus/icon-view]
+default-zoom-level='medium'
+
+[org/gnome/nautilus/window-state]
+initial-size=(1680, 940)
+
+[org/gnome/shell]
+favorite-apps=['update-manager.desktop', 'software-properties-gtk.desktop', 'snap-store_snap-store.desktop', 'org.gnome.SystemMonitor.desktop', 'com.github.wwmm.easyeffects.desktop', 'com.discordapp.Discord.desktop', 'org.telegram.desktop.desktop', 'org.gnome.Settings.desktop', 'org.gnome.Nautilus.desktop', 'code.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Terminal.desktop', 'kitty.desktop', 'firefox.desktop', 'brave-browser.desktop', 'google-chrome.desktop']
+
+[org/gnome/settings-daemon/plugins/media-keys]
+control-center=['<Super>s']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/']
+home=['<Super>e']
+www=['<Super>g']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Super>b'
+command='brave-browser-stable'
+name='brave'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding='<Super>c'
+command='code'
+name='code'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
+binding='<Super>a'
+command='flatpak run com.github.wwmm.easyeffects'
+name='effects'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
+binding='<Super>f'
+command='firefox'
+name='firefox'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
+binding='<Super>t'
+command='/home/anshul333y/.local/bin/hyprstyle'
+name='hyprstyle'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5]
+binding='<Super>Return'
+command='kitty'
+name='kitty'
+
+[org/gnome/shell/extensions/dash-to-dock]
+dock-fixed=false
+dock-position='BOTTOM'
+extend-height=false
+hot-keys=false
+show-mounts-only-mounted=true
+
+[org/gnome/shell/keybindings]
+toggle-application-view=['<Super>space']
+toggle-quick-settings=@as []
+
+[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+default-size-columns=145
+default-size-rows=36
+font='Maple Mono NF CN 14'
+scrollbar-policy='never'
+use-system-font=false
+visible-name='anshul333y'
