@@ -1,14 +1,10 @@
 #!/bin/bash
 
-sudo apt update
+sudo apt update && sudo apt upgrade -y
 
 printf "\n%${COLUMNS}s\n\n" | tr ' ' '-'
 
-sudo apt upgrade
-
-printf "\n%${COLUMNS}s\n\n" | tr ' ' '-'
-
-sudo apt autoremove
+sudo apt autoremove -y
 
 printf "\n%${COLUMNS}s\n\n" | tr ' ' '-'
 
@@ -16,4 +12,4 @@ sudo snap refresh
 
 printf "\n%${COLUMNS}s\n\n" | tr ' ' '-'
 
-flatpak update
+flatpak update --noninteractive
