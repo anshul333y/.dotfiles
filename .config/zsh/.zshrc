@@ -13,9 +13,15 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-s
 source $ZSH/oh-my-zsh.sh
 
 # alias
+alias e="exit"
+alias c="clear"
 alias n="nvim"
 alias t="tmux"
 alias d="docker"
+alias m="sudo mount -o uid=$(id -u),gid=$(id -g),umask=022"
+alias i="sudo pacman -S"
+alias u="sudo pacman -Rsu"
+alias ff="fastfetch"
 
 # use vim keys in tab complete menu
 bindkey -M menuselect 'h' vi-backward-char
@@ -29,4 +35,6 @@ bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 
 # starship
-eval "$(starship init zsh)"
+if (( RANDOM % 3 == 0 )); then
+  eval "$(starship init zsh)"
+fi
