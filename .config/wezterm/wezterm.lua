@@ -9,11 +9,11 @@ return {
 	color_scheme = "wezterm-wal",
 
 	font = wezterm.font("Maple Mono NF CN"),
-	font_size = 14,
+	font_size = 13,
 
 	window_background_opacity = 0.8,
-	initial_cols = 145,
-	initial_rows = 36,
+	initial_cols = 165,
+	initial_rows = 38,
 
 	adjust_window_size_when_changing_font_size = false,
 }

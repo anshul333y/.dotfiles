@@ -1,7 +1,7 @@
 @import "~/.cache/wal/colors-rofi-dark.rasi"
 
 configuration {
-    font:                  "Maple Mono NF CN Bold 18";
+    font:                  "Maple Mono NF CN Bold 16";
     show-icons:            true;
     icon-theme:            "Arc-X-D";
     display-drun:          "Applications";
@@ -9,13 +9,13 @@ configuration {
     scroll-method:         0;
     disable-history:       true;
     sidebar-mode:          false;
-    matching:              "fuzzy";
+    matching:              "normal";
     case-sensitive:        false;
     prompt:                "󰣇 Run:";
 }
 
 window {
-    width:                 60%;
+    width:                 70%;
     location:              center;
     border-radius:         16px;
     padding:               20px;
@@ -25,7 +25,7 @@ window {
 
 listview {
     columns:               3;
-    lines:                 6;
+    lines:                 7;
     spacing:               6px;
     fixed-height:          false;
     dynamic:               true;
