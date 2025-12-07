@@ -2,9 +2,9 @@ theme = "/home/anshul333y/.cache/wal/colors-ghostty"
 
 font-family = Maple Mono NF CN
 
-font-size = 14
+font-size = 13
 background-opacity = 0.8
 
 gtk-titlebar = false
-window-width = 145
-window-height = 38
+window-width = 165
+window-height = 40
