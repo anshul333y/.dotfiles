@@ -1,0 +1,24 @@
+#!/bin/bash
+
+separator() {
+  printf "\n%${COLUMNS}s\n\n" | tr ' ' '-'
+}
+
+if command -v apt >/dev/null 2>&1; then
+  sudo apt update && sudo apt upgrade -y
+  separator
+  sudo apt autoremove -y
+  separator
+  sudo snap refresh
+fi
+
+if command -v pacman >/dev/null 2>&1; then
+  sudo pacman -Syu --noconfirm
+  separator
+  sudo pacman -Rsu --noconfirm $(pacman -Qdtq)
+  separator
+  paru -Syu --noconfirm
+fi
+
+separator
+flatpak update --noninteractive
