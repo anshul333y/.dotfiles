@@ -1,15 +1,17 @@
 #!/bin/bash
 
+# anshul333y's update script
+
 separator() {
   printf "\n%${COLUMNS}s\n\n" | tr ' ' '-'
 }
 
 if command -v apt >/dev/null 2>&1; then
-  sudo apt update && sudo apt upgrade -y
+  sudo apt update
+  separator
+  sudo apt upgrade -y
   separator
   sudo apt autoremove -y
-  separator
-  sudo snap refresh
 fi
 
 if command -v pacman >/dev/null 2>&1; then
@@ -20,5 +22,9 @@ if command -v pacman >/dev/null 2>&1; then
   paru -Syu --noconfirm
 fi
 
-separator
-flatpak update --noninteractive
+if command -v flatpak >/dev/null 2>&1; then
+  separator
+  flatpak update -y
+  separator
+  flatpak uninstall -y --unused
+fi
