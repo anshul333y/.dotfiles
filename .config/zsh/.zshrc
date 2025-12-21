@@ -22,6 +22,8 @@ alias i="sudo pacman -S"
 alias u="sudo pacman -Rsu"
 alias ff="fastfetch"
 alias y="yazi"
+alias s="cd ~/.dotfiles && stow --adopt . && cd"
+alias music='yt-dlp -f bestaudio -x --audio-format best --download-archive "$HOME/music/archive.txt" -P "$HOME/music"'
 
 # use vim keys in tab complete menu
 bindkey -M menuselect 'h' vi-backward-char
