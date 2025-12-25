@@ -8,7 +8,8 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
 export PATH="$HOME/.local/bin:$PATH"
-export HISTFILE="$HOME/.local/share/zsh_history"
+export HISTFILE="$XDG_STATE_HOME"/zsh/history
+export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump-$HOST-$ZSH_VERSION"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
 
 export PYTHON_HISTORY="$XDG_STATE_HOME/python_history"

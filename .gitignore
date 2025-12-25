@@ -1,5 +1,0 @@
-# ignoring tmux plugins
-.config/tmux/plugins
-
-# ignoring zsh system files
-.config/zsh/.zcompdump*
