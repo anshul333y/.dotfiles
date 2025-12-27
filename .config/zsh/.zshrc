@@ -36,6 +36,9 @@ bindkey -v '^?' backward-delete-char
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 
+# x11
+xrdb -merge ~/.config/x11/Xresources
+
 # starship
 if (( RANDOM % 3 == 0 )); then
   eval "$(starship init zsh)"

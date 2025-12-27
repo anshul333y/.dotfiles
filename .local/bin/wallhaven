@@ -7,7 +7,7 @@ WALLPAPER_DIR="$HOME/pics/wall"
 CATEGORIES="111"
 PURITY="100"
 ORDER="desc"
-TOPRANGE="1y"
+# TOPRANGE="1y"
 MAX_PAGES=3
 
 # Prompt for sorting
