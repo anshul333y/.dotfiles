@@ -8,7 +8,7 @@ CATEGORIES="111"
 PURITY="100"
 ORDER="desc"
 # TOPRANGE="1y"
-MAX_PAGES=3
+MAX_PAGES=6
 
 # Prompt for sorting
 echo "Choose sorting option:"
