@@ -44,3 +44,6 @@ xrdb -merge ~/.config/x11/Xresources
 if (( RANDOM % 3 == 0 )); then
   eval "$(starship init zsh)"
 fi
+
+# zoxide
+eval "$(zoxide init --cmd cd zsh)"
