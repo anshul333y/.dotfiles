@@ -8,7 +8,7 @@ SAVEHIST=10000000
 export ZSH="$HOME/.config/oh-my-zsh"
 ZSH_THEME="random"
 ZSH_THEME_RANDOM_QUIET="true"
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search you-should-use)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use)
 source "$ZSH/oh-my-zsh.sh"
 
 # alias
@@ -16,13 +16,12 @@ alias e="exit"
 alias c="clear"
 alias n="nvim"
 alias t="tmux"
-alias d="docker"
-alias m="sudo mount -o uid=$(id -u),gid=$(id -g),umask=022"
+alias y="yazi"
+alias ff="fastfetch"
 alias i="sudo pacman -S"
 alias u="sudo pacman -Rsu"
-alias ff="fastfetch"
-alias y="yazi"
 alias s="cd ~/.dotfiles && stow --adopt . && cd"
+alias m="sudo mount -o uid=$(id -u),gid=$(id -g),umask=022"
 alias music='yt-dlp -f bestaudio -x --audio-format best --embed-thumbnail --embed-metadata --download-archive "$HOME/music/archive.txt" -P "$HOME/music"'
 alias gparted='pkexec env WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR gparted'
 
@@ -33,9 +32,8 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
-# zsh-history-substring-search
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+# fzf
+source <(fzf --zsh)
 
 # x11
 xrdb -merge ~/.config/x11/Xresources
