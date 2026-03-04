@@ -24,6 +24,7 @@ alias s="cd ~/.dotfiles && stow --adopt . && cd"
 alias m="sudo mount -o uid=$(id -u),gid=$(id -g),umask=022"
 alias music='yt-dlp -f bestaudio -x --audio-format best --embed-thumbnail --embed-metadata --download-archive "$HOME/music/archive.txt" -P "$HOME/music"'
 alias gparted='pkexec env WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR gparted'
+alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 
 # use vim keys in tab complete menu
 bindkey -M menuselect 'h' vi-backward-char
