@@ -45,7 +45,7 @@ default-zoom-level='medium'
 initial-size=(1680, 940)
 
 [org/gnome/shell]
-favorite-apps=['com.github.wwmm.easyeffects.desktop', 'com.discordapp.Discord.desktop', 'org.telegram.desktop.desktop', 'org.gnome.SystemMonitor.desktop', 'org.gnome.Software.desktop', 'org.gnome.Settings.desktop', 'org.gnome.Nautilus.desktop', 'code.desktop', 'org.gnome.Console.desktop', 'kitty.desktop', 'firefox.desktop']
+favorite-apps=['com.github.wwmm.easyeffects.desktop', 'com.discordapp.Discord.desktop', 'org.telegram.desktop.desktop', 'org.gnome.SystemMonitor.desktop', 'org.gnome.Software.desktop', 'org.gnome.Settings.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop', 'kitty.desktop', 'firefox.desktop', 'google-chrome.desktop']
 
 [org/gnome/settings-daemon/plugins/media-keys]
 control-center=['<Super>s']
@@ -85,6 +85,15 @@ hot-keys=false
 show-mounts-only-mounted=true
 
 [org/gnome/shell/keybindings]
+switch-to-application-1=@as []
+switch-to-application-2=@as []
+switch-to-application-3=@as []
+switch-to-application-4=@as []
+switch-to-application-5=@as []
+switch-to-application-6=@as []
+switch-to-application-7=@as []
+switch-to-application-8=@as []
+switch-to-application-9=@as []
 toggle-application-view=['<Super>space']
 toggle-quick-settings=@as []
 
