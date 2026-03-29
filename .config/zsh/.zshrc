@@ -33,16 +33,13 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
-# fzf
-source <(fzf --zsh)
-
-# x11
-xrdb -merge ~/.config/x11/Xresources
-
 # starship
 if (( RANDOM % 3 == 0 )); then
   eval "$(starship init zsh)"
 fi
+
+# fzf
+source <(fzf --zsh)
 
 # zoxide
 eval "$(zoxide init --cmd cd zsh)"
