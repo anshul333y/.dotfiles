@@ -2,7 +2,7 @@ typeset -U path
 
 export EDITOR="nvim"
 export VISUAL="nvim"
-export TERMINAL="kitty"
+export TERMINAL="footclient"
 export BROWSER="firefox"
 
 export XDG_CACHE_HOME="$HOME/.cache"
