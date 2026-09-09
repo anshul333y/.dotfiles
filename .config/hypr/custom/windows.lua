@@ -40,7 +40,7 @@ hl.window_rule({
 
 hl.window_rule({
 	name = "brave-workspace-1",
-	match = { class = "brave-browser" },
+	match = { class = "brave-origin" },
 
 	workspace = "1",
 })
